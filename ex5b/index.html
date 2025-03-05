@@ -44,12 +44,7 @@
 					return;
 			   }
 		}
-	    $(document).ready(function(){
-			$("button").click(function(){
-			   var t = $('#temp').val();//celsius
-			   var u = $('#unit').val();
-			   
-			   
+	      
 		function Converttemerarura(u,t){
 			var t1;
 			var u1;
@@ -67,9 +62,18 @@
 			 return (u1,t1);
 			}   
 
-			  
+			//$(document).ready(function(){
+			$("button").click(function(){
+			   var t = $('#temp').val();//celsius
+			   var u = $('#unit').val();
+
+			   var chk=validateTemperatureInput(t);
+			   if (chk!=null) return chk;
+			   var ovs = convertTemperature(u,t);
+
+			   document.getElementbyId("result").innerHTML = ("Temperature is "+cvs.t1+" in "+cvs.u1);
 			   
-			   alert("Temperature is "+t1+" in "+u1);
+			   //alert("Temperature is "+t1+" in "+u1);
 			});
 		});
 	</script>
